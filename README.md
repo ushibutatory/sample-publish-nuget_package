@@ -1,12 +1,12 @@
-# sample-publish-nuget_package
-
-GitHub PackagesをプライベートなNuGetパッケージソースとして利用する。
+# Use GitHub Packages as Private NuGet Package Source. (Publish NuGet Package to GitHub Packages with GitHub Actions.)
 
 ## 概要
 
-自作NuGetパッケージをGitHubPackagesに配置することで、プライベートなNuGetパッケージソースとして扱うことができます。
+自作NuGetパッケージを GitHub Packages に配置することで、プライベートなNuGetパッケージソースとして扱うことができます。
 
-nuget.orgへ公開したくない、チーム内や個人で共有したいパッケージの管理方法のひとつとして有効だと思います。
+また、GitHub Actions を利用することで、パッケージの更新を自動化できます。
+
+nuget.org へ公開したくない、チーム内や個人で共有したいパッケージの管理方法のひとつとして有効だと思います。
 
 ![overview](./docs/overview.svg)
 
