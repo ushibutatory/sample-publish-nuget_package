@@ -1,0 +1,32 @@
+name: Publish NuGet Package
+
+on:
+  push:
+    tags:
+      - ver.*
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Setup
+        uses: actions/setup-dotnet@v1
+        with:
+          source-url: https://nuget.pkg.github.com/${USER_NAME}/index.json
+        env:
+          USER_NAME: ushibutatory
+          NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Build and Test
+        run: |
+          cd "${GITHUB_WORKSPACE}/${SOLUTION_DIR}/"
+          dotnet build -c Release
+          dotnet test -c Release --no-build
+      - name: Pack and Publish
+        run: |
+          cd "${GITHUB_WORKSPACE}/${SOLUTION_DIR}/"
+          dotnet pack -c Release --no-build -o .
+          dotnet nuget push *.nupkg
+    env:
+      SOLUTION_DIR: ./src/SampleSolution
