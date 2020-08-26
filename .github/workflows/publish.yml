@@ -14,7 +14,7 @@ jobs:
       - name: Setup
         uses: actions/setup-dotnet@v1
         with:
-          source-url: https://nuget.pkg.github.com/${USER_NAME}/index.json
+          source-url: "https://nuget.pkg.github.com/${USER_NAME}/index.json"
         env:
           USER_NAME: ushibutatory
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
