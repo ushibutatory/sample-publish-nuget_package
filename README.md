@@ -55,7 +55,7 @@ on:
   run: |
     ...
     dotnet pack -c Release --no-build -o .
-    dotnet nuget push *.nupkg
+    dotnet nuget push *.nupkg --skip-duplicate
 ```
 
 - `dotnet nuget push` コマンドにより、生成したパッケージを発行します。発行先は先に指定した自身のリポジトリ（GitHub Packages）です。
