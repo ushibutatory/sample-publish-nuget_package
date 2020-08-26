@@ -2,6 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <Version>2020.08.26.01</Version>
+    <Authors>@ushibutatory</Authors>
+    <Copyright>@ushibutatory</Copyright>
+    <PackageProjectUrl>https://github.com/ushibutatory/sample-publish-nuget_package</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ushibutatory/sample-publish-nuget_package</RepositoryUrl>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
