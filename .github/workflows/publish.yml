@@ -27,6 +27,6 @@ jobs:
         run: |
           cd "${GITHUB_WORKSPACE}/${SOLUTION_DIR}/"
           dotnet pack -c Release --no-build -o .
-          dotnet nuget push *.nupkg
+          dotnet nuget push *.nupkg --skip-duplicate
     env:
       SOLUTION_DIR: ./src/SampleSolution
